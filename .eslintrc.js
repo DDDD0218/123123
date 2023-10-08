@@ -5,6 +5,8 @@ module.exports = {
   },
   rules: {
     'object-curly-newline': 'off',
+    'no-console': process.env.NODE_ENV === 'development' ? 'off' : 'error',
+    'no-alert': process.env.NODE_ENV === 'development' ? 'off' : 'error',
   },
   extends: ['airbnb', 'plugin:prettier/recommended'],
   overrides: [
@@ -23,3 +25,4 @@ module.exports = {
     sourceType: 'module',
   },
 };
+// 通过在npm run start脚本运行时设置process.env.NODE_ENV
